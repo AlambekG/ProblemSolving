@@ -12,10 +12,11 @@ public:
              if(i == 'n') n ++;
         }
         
-        a = min(a, b);
-        a = min(a, n);
-        a = min(a, l / 2);
-        a = min(a, o / 2);
+        if(b < a) a = b;
+        if(n < a) a = n;
+        if(int(l / 2) < a) a = l / 2;
+        if(int(o / 2) < a) a = o / 2;
+        
         return a;
     }
 };
