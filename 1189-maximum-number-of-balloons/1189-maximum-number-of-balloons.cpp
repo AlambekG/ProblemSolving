@@ -12,20 +12,10 @@ public:
              if(i == 'n') n ++;
         }
         
-        int cnt = 0;
-        while(1){
-            if(b) b--;
-            else break;
-            if(a) a--;
-            else break;
-            if(l > 1) l -= 2;
-            else break;
-            if(o > 1) o -= 2;
-            else break;
-            if(n) n--;
-            else break;
-            cnt ++;
-        }
-        return cnt;
+        a = min(a, b);
+        a = min(a, n);
+        a = min(a, l / 2);
+        a = min(a, o / 2);
+        return a;
     }
 };
