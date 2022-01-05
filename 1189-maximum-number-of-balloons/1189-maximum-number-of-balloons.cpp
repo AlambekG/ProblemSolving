@@ -14,8 +14,8 @@ public:
         
         if(b < a) a = b;
         if(n < a) a = n;
-        if(int(l / 2) < a) a = l / 2;
-        if(int(o / 2) < a) a = o / 2;
+        if(int(l >> 1) < a) a = l >> 1;
+        if(int(o >> 1) < a) a = o >> 1;
         
         return a;
     }
