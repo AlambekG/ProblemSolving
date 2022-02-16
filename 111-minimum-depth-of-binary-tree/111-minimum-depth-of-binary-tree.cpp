@@ -12,18 +12,10 @@
 class Solution {
 public:
     int minDepth(TreeNode* root) {
-        queue <pair <TreeNode*, int> > q;
+        if(!root) return 0;
+        else if(!root->left) return minDepth(root->right) + 1;
+        else if(!root->right) return minDepth(root->left) + 1;
+        return min(minDepth(root->right), minDepth(root->left)) + 1;
         
-        if(root)
-        q.push(make_pair(root, 1));
-        while(!q.empty()){
-             TreeNode* v = q.front().first;
-             int d = q.front().second;
-             q.pop();
-             if(!v->left && !v->right) return d; 
-             if(v->left) q.push(make_pair(v->left, d + 1));
-             if(v->right) q.push(make_pair(v->right, d + 1));
-        }
-        return 0;
     }
 };
