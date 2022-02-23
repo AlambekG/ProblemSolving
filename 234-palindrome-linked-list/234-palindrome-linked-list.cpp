@@ -10,20 +10,19 @@
  */
 class Solution {
 public:
-    void helper(ListNode *&p1, ListNode *p2, bool &ans){
-        if(!p1 || !p2 || !ans)
-            return;
-        helper(p1, p2->next, ans);
-        int a = p1->val, b = p2->val;
-        if(a != b){
-            ans = false;
-            return;
-        }
-        p1 = p1->next;
-    }
+    
+    ListNode *g_ptr;
+
+bool DFS(ListNode* node)
+{
+	if (!node)
+		return true;
+	bool result = DFS(node->next) && node->val == g_ptr->val;
+	g_ptr = g_ptr->next;
+	return result;
+}
     bool isPalindrome(ListNode* head) {
-        bool ans = true;
-        helper(head, head, ans);
-        return ans;
+      	g_ptr = head;
+	return DFS(head);
     }
 };
