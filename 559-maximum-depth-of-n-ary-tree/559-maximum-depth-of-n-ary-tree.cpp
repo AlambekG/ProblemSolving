@@ -20,17 +20,11 @@ public:
 
 class Solution {
 public:
-    int mx = 0;
-    int dfs(Node* root, int d){
-          mx = max(mx, d);
-          if(!root) return d;
-          for(auto i : root->children)
-            dfs(i, d + 1);
-          return d + 1;
-    }
     int maxDepth(Node* root) {
          if(!root) return 0;
-         dfs(root, 1);
-         return mx;
+         int h = 0;
+         for(auto i : root->children)
+              h = max(h, maxDepth(i));
+         return h + 1;
     }
 };
