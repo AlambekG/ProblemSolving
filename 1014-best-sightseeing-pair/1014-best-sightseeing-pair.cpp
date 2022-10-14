@@ -15,7 +15,6 @@ public:
         int ans = 0;
         for(int i = 0;i < n - 1;i ++){
             ans = max(ans, values[i] + dp[i + 1] + i);
-            cout << values[i] << ' '<< dp[i + 1] << ' ' << i << endl;
         }
         return ans;
     }
