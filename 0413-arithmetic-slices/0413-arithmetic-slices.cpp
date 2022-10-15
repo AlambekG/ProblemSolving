@@ -7,7 +7,7 @@ public:
         
         int l = 0, cnt = 0, r = 0;
         
-        int diff = nums[1] - nums[0];
+        int diff = nums[1] - nums[0], val = 0;
         for(int i = 2;i < n;i ++){
             if(nums[i] - nums[i - 1] == diff){
                 r = i;
@@ -15,17 +15,15 @@ public:
             }
             else{
                 v.push_back(r - l + 1);
+                val = r - l + 1;
+                if(val > 2) cnt += ((val - 2)*(val - 1) / 2);
                 l = i - 1;
                 diff = nums[i] - nums[i - 1];
             }
         }
-        if(r != l) v.push_back(r - l + 1);
-        for(auto i : v){
-            cout << i << ' ';
-            if(i > 2){
-                i -= 2;
-                cnt += (i * (i + 1) / 2);
-            }
+        if(r != l){
+            val = r - l + 1;
+            if(val > 2) cnt += ((val - 2)*(val - 1) / 2);
         }
         return cnt;
     }
