@@ -21,7 +21,6 @@ public:
             }
             if (minFound && maxFound) {
                 res += (min(minStart, maxStart) - start + 1);
-                cout << (min(minStart, maxStart) - start + 1) << endl;
             }
         }
         return res;
