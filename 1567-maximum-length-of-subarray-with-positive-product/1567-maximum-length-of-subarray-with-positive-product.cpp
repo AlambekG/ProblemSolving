@@ -3,7 +3,7 @@ public:
     int getMaxLen(vector<int>& nums) {
         int n = nums.size() + 10;
         
-        long long dp[n][2], d[n][2];
+        long int dp[n][2], d[n][2];
         
         if(nums[0] < 0) {
             dp[0][0] = 0;
@@ -24,7 +24,7 @@ public:
             d[0][1] = 0;
         }
         
-        long long mx = d[0][0];
+        long int mx = d[0][0];
         for(int i = 1;i < nums.size();i ++){
             if(nums[i] < 0){
                 if(nums[i] * dp[i - 1][1] > 0){
@@ -57,7 +57,6 @@ public:
                 else dp[i][1] = -3;
             }
             mx = max(mx, d[i][0]);
-         
         }
         return int(mx);
     }
