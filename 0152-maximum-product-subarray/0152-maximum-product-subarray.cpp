@@ -38,7 +38,6 @@ public:
                 else dp[i][1] = 0;
             }
             mx = max(mx, dp[i][0]);
-            cout << dp[i][0] << ' ' << dp[i][1] << endl;
     }
         return mx;
     }
