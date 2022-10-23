@@ -1,6 +1,7 @@
 class Solution {
 public:
-    int getMaxLen(vector<int>& nums) {    int posLen = 0, negLen = 0, maxLen = 0;
+    int getMaxLen(vector<int>& nums) {    
+    int posLen = 0, negLen = 0, maxLen = 0;
 	for (int i : nums) {
 		if (i == 0) posLen = 0, negLen = 0;
 		else {
