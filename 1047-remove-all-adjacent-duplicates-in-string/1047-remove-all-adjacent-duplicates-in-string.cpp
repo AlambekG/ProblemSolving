@@ -7,9 +7,7 @@ public:
         for(int i = 1;i < s.size();i ++){
             if(l != i && l > -1 && s[l] == s[i]){
                 mp[l] = mp[i] = 1;
-                l --;
                 while(mp[l]) l --;
-                //if(mp[l] == 1) l = i + 1;
             }
             else l = i;
         }
